@@ -8,69 +8,44 @@ assert(
     "combineRecursive returns truthy value"
 );
 
-assert.deepStrictEqual(
-    combineRecursive(["a"], ["b", "c"]),
-    ["ab", "ac"],
-    "combineRecursive returns combined stings 1"
-);
+assert.deepStrictEqual(combineRecursive(["a"], ["b", "c"]), ["ab", "ac"]);
 
-assert.deepStrictEqual(
-    combineRecursive(["a"], ["b", "c", "d"]),
-    ["ab", "ac", "ad"],
-    "combineRecursive returns combined stings 1"
-);
+assert.deepStrictEqual(combineRecursive(["a"], ["b", "c", "d"]), [
+    "ab",
+    "ac",
+    "ad"
+]);
 
-assert.deepStrictEqual(
-    combineRecursive(["a"], ["b"], ["c", "d"]),
-    ["abc", "abd"],
-    "combineRecursive returns combined stings 2"
-);
+assert.deepStrictEqual(combineRecursive(["a"], ["b"], ["c", "d"]), [
+    "abc",
+    "abd"
+]);
 
-assert.deepStrictEqual(
-    combineRecursive(["a"], [], ["c", "d"]),
-    [],
-    "combineRecursive returns combined stings 3"
-);
+assert.deepStrictEqual(combineRecursive(["a"], [], ["c", "d"]), []);
 
-assert.deepStrictEqual(
-    combineRecursive([], ["c", "d"]),
-    [],
-    "combineRecursive returns combined stings 3"
-);
+assert.deepStrictEqual(combineRecursive(["a"], ["c", "d"], []), []);
+
+assert.deepStrictEqual(combineRecursive([], ["c", "d"]), []);
 
 // combineIterative tests
 assert(combineIterative, "combineIterative function exists");
-assert(
-    combineIterative(["a"], ["b", "c", "d"]),
-    "combineIterative returns truthy value"
-);
+assert(combineIterative(["a"], ["b", "c", "d"]));
 
-assert.deepStrictEqual(
-    combineIterative(["a"], ["b", "c"]),
-    ["ab", "ac"],
-    "combineIterative returns combined stings 1"
-);
+assert.deepStrictEqual(combineIterative(["a"], ["b", "c"]), ["ab", "ac"]);
 
-assert.deepStrictEqual(
-    combineIterative(["a"], ["b", "c", "d"]),
-    ["ab", "ac", "ad"],
-    "combineIterative returns combined stings 1"
-);
+assert.deepStrictEqual(combineIterative(["a"], ["b", "c", "d"]), [
+    "ab",
+    "ac",
+    "ad"
+]);
 
-assert.deepStrictEqual(
-    combineIterative(["a"], ["b"], ["c", "d"]),
-    ["abc", "abd"],
-    "combineIterative returns combined stings 2"
-);
+assert.deepStrictEqual(combineIterative(["a"], ["b"], ["c", "d"]), [
+    "abc",
+    "abd"
+]);
 
-assert.deepStrictEqual(
-    combineIterative(["a"], [], ["c", "d"]),
-    [],
-    "combineIterative returns combined stings 3"
-);
+assert.deepStrictEqual(combineIterative(["a"], [], ["c", "d"]), []);
 
-assert.deepStrictEqual(
-    combineIterative([], ["c", "d"]),
-    [],
-    "combineIterative returns combined stings 3"
-);
+assert.deepStrictEqual(combineIterative(["a"], ["c", "d"], []), []);
+
+assert.deepStrictEqual(combineIterative([], ["c", "d"]), []);
